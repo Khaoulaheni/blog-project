@@ -1,7 +1,8 @@
+
+<div  class="container" *ngIf="post">
 <div [ngClass]="{
-                'list-group-item-success': getNumberofLikes() > 2,
-                'list-group-item-danger': getNumberofLikes() <= 2}">
-<div  class="container" *ngIf="post" [ngStyle]="{color: getColor()}">
+                'list-group-item-success': getNumberofLikes() > 0,
+                'list-group-item-danger': getNumberofLikes() <= 0}">
   <h2>{{post.title | uppercase }}</h2>
   <div class="date"><span>Date: </span>{{post.created_at | date: 'short' }} </div>
   <div><span>content: </span>{{post.content}}</div>
@@ -10,3 +11,4 @@
 <button class="btn-danger" (click)="onDislike()">dislike</button>
 </div>
 </div>
+<button (click)="onBack()">go back</button>
